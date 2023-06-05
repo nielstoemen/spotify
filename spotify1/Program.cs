@@ -5,7 +5,10 @@ namespace spotify1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            User keyUser = new(1, "niels");
+            artist artist = new("kuthond");
+            //debug lines
+            Console.WriteLine(keyUser.Name + " " + keyUser.UserID + " " + artist.Name);
         }
     }
 }
