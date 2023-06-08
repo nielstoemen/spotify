@@ -5,7 +5,18 @@ namespace spotify1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            Person user = new Person();
+
+
+            Console.WriteLine("Enter username:");
+            user.Username = Console.ReadLine();
+            Console.WriteLine("Username is: " + user.Username);
+            user.accountcode = 12345;
+
+          
+
+          
+
         }
     }
 }
