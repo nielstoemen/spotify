@@ -120,12 +120,28 @@ namespace spotify1
                     }
                 }
 
-                //----------------development has to go into while loop------------
-                Console.WriteLine("name your playlist");
-                string naamie = Console.ReadLine();
 
-                CreatePlaylist test = new CreatePlaylist(naamie);
-                //Console.WriteLine(test.PlaylistName);
+                Console.WriteLine("do you want to make a playlist? yes or no:");
+                string vraagmakenplaylist = Console.ReadLine();
+                if (vraagmakenplaylist == "yes")
+                {
+                    while (true)
+                    {
+                        Console.WriteLine("name your playlist");
+                        string naamie = Console.ReadLine();
+
+                        CreatePlaylist test = new CreatePlaylist(naamie);
+                        //Console.WriteLine(test.PlaylistName);
+                        Console.WriteLine("do you want to make another playlist? yes or no:");
+                        string makeanotherplaylistquestion = Console.ReadLine();
+                        if (makeanotherplaylistquestion == "no")
+                        {
+                            break;
+                        }
+                    }
+                }
+
+
 
                 break;
             }
