@@ -1,4 +1,5 @@
 ﻿
+
 namespace spotify1
 {
     internal class Program
@@ -19,9 +20,9 @@ namespace spotify1
             //creating users
 
             User keyUser = new(1, "keyUser");
-            User Robin = new(2, "robin");
-            User Niels = new(3, "niels");
-            User Robberto = new(4, "roberto");
+            User Robin = new(2, "Robin");
+            User Niels = new(3, "Niels");
+            User Robberto = new(4, "Roberto");
 
 
             //Console.WriteLine(keyUser.Name);
@@ -32,9 +33,9 @@ namespace spotify1
 
             //creating artists
 
-            artist stellar = new ("stellar");
-            artist nf = new("NF");
-            artist DPC = new("DPC");
+            artist stellar = new (1,"stellar");
+            artist nf = new(2,"NF");
+            artist DPC = new(3,"DPC");
 
             //Console.WriteLine(stellar.Name);
             //Console.WriteLine(nf.Name);
@@ -47,6 +48,73 @@ namespace spotify1
             //<<<<<<<<<<<<<<<<<<<ending create databse>>>>>>>>>>>>>>>>>>
 
 
+            string CurrentUser;
+            while (true) 
+            {
+                
+                 while (true)
+                {
+                    Console.WriteLine("pick a user (case sensetive):");
+                    Console.WriteLine("-" + keyUser.Name);
+                    Console.WriteLine("-" + Robin.Name);
+                    Console.WriteLine("-" + Niels.Name);
+                    Console.WriteLine("-" + Robberto.Name);
+                    string pickUser = Console.ReadLine();
+                    if (pickUser == "keyUser")
+                    {
+                        CurrentUser = "keyUser";
+                        break;
+                    }
+                    else if (pickUser == "Robin")
+                    {
+                        CurrentUser = "Robin";
+                        break;
+                    }
+                    else if (pickUser == "Niels")
+                    {
+                        CurrentUser = "Niels";
+                        break;
+                    }
+                    else if (pickUser == "Robberto")
+                    {
+                        CurrentUser = "Robberto";
+                        break;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Wrong user try again");
+                    }
+                }
+
+
+                while (true)
+                {
+                    Console.WriteLine("Pick a song(case sensetive):");
+                    Console.WriteLine("-" + allesiskut.SongName);
+                    Console.WriteLine("-" + allesisvegina.SongName);
+                    Console.WriteLine("-" + omaenmij.SongName);
+                    string PickSong = Console.ReadLine();
+                    if (PickSong == "alles is kut")
+                    {
+                        Console.WriteLine("*Playing alles is kut*");
+                        break;
+                    }else if(PickSong == "allesisvegina")
+                    {
+                        Console.WriteLine("*Playing allesisvegina*");
+                        break;
+                    }else if(PickSong == "omaenmij")
+                    {
+                        Console.WriteLine("*Playing omaenmij*");
+                        break;
+                    }
+                    else
+                    {
+                        Console.WriteLine("did not reconige song, please try again");
+                    }
+                }
+
+                break;
+            }
 
 
 
