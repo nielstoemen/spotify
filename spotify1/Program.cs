@@ -11,6 +11,7 @@ namespace spotify1
             nummer allesiskut = new("alles is kut", "jemoeder", "drama", 34, 2.44);
             nummer allesisvegina = new("allesisvegina", "jevader", "insulting", 33, 1.50);
             nummer omaenmij = new("omeenmij", "insestboys", "disturbing", 1, 5.3);
+            nummer binchilling = new("bingchilling", "bingchingelingdongdongboys", "chilling", 1, 5.3);
 
             //Console.WriteLine(allesiskut.SongName);
             //Console.WriteLine(allesisvegina.SongName);
@@ -115,6 +116,7 @@ namespace spotify1
 
                 break;
             }
+
 
 
 
