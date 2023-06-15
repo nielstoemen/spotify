@@ -8,10 +8,10 @@ namespace spotify1
         {
             //<<<<<<<<<<creating database for user interaction>>>>>>>>>>>>>//
             //creating songs
-            nummer allesiskut = new("alles is kut", "jemoeder", "drama", 34, 2.44);
-            nummer allesisvegina = new("allesisvegina", "jevader", "insulting", 33, 1.50);
-            nummer omaenmij = new("omeenmij", "insestboys", "disturbing", 1, 5.3);
-            nummer binchilling = new("bingchilling", "bingchingelingdongdongboys", "chilling", 1, 5.3);
+            nummer allesiskut = new("alles is kut", "jemoeder", "drama", 1, 2.44);
+            nummer allesisvegina = new(" allesisvegina", "jevader", "insulting", 2, 1.50);
+            nummer omaenmij = new("omeenmij", "insestboys", "disturbing", 3, 5.3);
+            nummer binchilling = new("bingchilling", "bingchingelingdongdongboys", "chilling", 4, 5.3);
 
             //Console.WriteLine(allesiskut.SongName);
             //Console.WriteLine(allesisvegina.SongName);
@@ -94,6 +94,7 @@ namespace spotify1
                     Console.WriteLine("-" + allesiskut.SongName);
                     Console.WriteLine("-" + allesisvegina.SongName);
                     Console.WriteLine("-" + omaenmij.SongName);
+                    Console.WriteLine("-" + binchilling.SongName);
                     string PickSong = Console.ReadLine();
                     if (PickSong == "alles is kut")
                     {
@@ -108,11 +109,23 @@ namespace spotify1
                         Console.WriteLine("*Playing omaenmij*");
                         break;
                     }
+                    else if (PickSong == "bingchilling")
+                    {
+                        Console.WriteLine("*Playing bingchilling*");
+                        break;
+                    }
                     else
                     {
                         Console.WriteLine("did not reconige song, please try again");
                     }
                 }
+
+                //----------------development has to go into while loop------------
+                Console.WriteLine("name your playlist");
+                string naamie = Console.ReadLine();
+
+                CreatePlaylist test = new CreatePlaylist(naamie);
+                //Console.WriteLine(test.PlaylistName);
 
                 break;
             }
