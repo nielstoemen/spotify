@@ -11,7 +11,11 @@ namespace spotify1
         public int UserID {  get; set; }
         public string Name { get; set; }
 
+
         public List<int> FriendList = new List<int>();
+
+        //List<int> friendlist = new List<int>();
+
 
         public User (int ID, string naam)
         {
