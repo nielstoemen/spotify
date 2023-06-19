@@ -1,5 +1,6 @@
 ﻿
 
+
 namespace spotify1
 {
     internal class Program
@@ -149,7 +150,55 @@ namespace spotify1
 
 
 
+            List<User> users = new List<User>();
 
+            while (true)
+            {
+                Console.WriteLine("Enter a name (or 'done' to finish):");
+                string inputFriendName = Console.ReadLine();
+
+                if (inputFriendName.ToLower() == "done")
+                {
+                    break;
+                }
+
+
+                    
+
+                User newUser = new User(users.Count + 1, inputFriendName);
+                users.Add(newUser);
+
+                Console.WriteLine("Enter the names of friends for {0} (separated by commas):", inputFriendName);
+                string friendsInput = Console.ReadLine();
+               
+                if (string.IsNullOrEmpty(friendsInput) || string.IsNullOrWhiteSpace(friendsInput))
+                {
+                    Console.WriteLine("Sorry, your name is empty. Please enter again.");
+                 continue;
+                }
+                string[] friendNames = friendsInput.Split(',');
+
+                foreach (string friendName in friendNames)
+                {
+                    User friend = users.Find(u => u.Name == friendName.Trim());
+
+                    if (friend != null)
+                    {
+                        newUser.FriendList.Add(friend);
+                        friend.FriendList.Add(newUser);
+                    }
+                    else
+                    {
+                        Console.WriteLine("User '{0}' does not exist. Skipping.", friendName.Trim());
+                    }
+                }
+            }
+
+
+
+
+
+           
 
 
 
