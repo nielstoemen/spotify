@@ -142,7 +142,35 @@ namespace spotify1
                     }
                 }
 
+                Console.WriteLine("would you like to add a song for you to listen to?");
+                string nummeradden = Console.ReadLine();
+                if (nummeradden == "yes")
+                {
+                    while(true)
+                    {
+                        Console.WriteLine("name of the song?:");
+                        string naamnummer = Console.ReadLine();
+                        Console.WriteLine("artiestname?:");
+                        string artiest = Console.ReadLine(); 
+                        Console.WriteLine("nummer ganre?:");
+                        string genre = Console.ReadLine();
+                        Console.WriteLine("id (weghalen)?:");
+                        int nummerd = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine(" song duration?:");
+                        double duur = Convert.ToDouble(Console.ReadLine());
 
+                        nummer testnummer = new(naamnummer, artiest, genre, nummerd, duur);
+                        Console.WriteLine(testnummer.SongName);
+
+                        Console.WriteLine("would you like to add another song?:");
+                        string nogeennumer = Console.ReadLine();
+                        if (nogeennumer == "no")
+                        {
+                            break;
+                        }
+                        
+                    }
+                }
 
                 break;
             }
