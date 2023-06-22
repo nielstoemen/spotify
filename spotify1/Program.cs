@@ -1,11 +1,14 @@
 ﻿
 
+
 namespace spotify1
 {
     internal class Program
     {
         static void Main(string[] args)
         {
+
+            
             //<<<<<<<<<<creating database for user interaction>>>>>>>>>>>>>//
             //creating songs
             nummer allesiskut = new("alles is kut", "jemoeder", "drama", 1, 2.44);
@@ -272,6 +275,92 @@ namespace spotify1
 
                 break;
             }
+
+
+
+
+
+     
+
+            // hier maken while nummerplaying is true gaat de bar van hoe lang het nummer duurt omhoog
+
+            
+
+            List<User> users = new List<User>();
+
+            while (true)
+            {
+                Console.WriteLine("Enter a name (or 'done' to finish):");
+                string inputFriendName = Console.ReadLine();
+
+                if (inputFriendName.ToLower() == "done")
+                {
+                    break;
+                }
+
+
+                
+
+                User newUser = new User(users.Count + 1, inputFriendName);
+                users.Add(newUser);
+
+                Console.WriteLine("Enter the names of friends for {0} (separated by commas):", inputFriendName);
+                string friendsInput = Console.ReadLine();
+               
+                if (string.IsNullOrEmpty(friendsInput) || string.IsNullOrWhiteSpace(friendsInput))
+                {
+                    Console.WriteLine("Sorry, your name is empty. Please enter again.");
+                 continue;
+                }
+                string[] friendNames = friendsInput.Split(',');
+
+                foreach (string friendName in friendNames)
+                {
+                    User friend = users.Find(u => u.Name == friendName.Trim());
+
+                    if (friend != null)
+                    {
+                        newUser.FriendList.Add(friend);
+                        friend.FriendList.Add(newUser);
+                    }
+                    else
+                    {
+                        Console.WriteLine("User '{0}' does not exist. Skipping.", friendName.Trim());
+                    }
+                }
+            }
+
+
+
+                    Console.WriteLine("Enter the name of the user from which you want to remove a friend:");
+        string inputUserName = Console.ReadLine();
+
+        User userToRemoveFriend = users.Find(u => u.Name == inputUserName.Trim());
+
+        if (userToRemoveFriend != null)
+        {
+            Console.WriteLine("Enter the name of the friend you want to remove:");
+            string inputFriendName = Console.ReadLine();
+
+            User friendToRemove = userToRemoveFriend.FriendList.Find(f => f.Name == inputFriendName.Trim());
+
+            if (friendToRemove != null)
+            {
+                userToRemoveFriend.RemoveFriend(friendToRemove);
+                friendToRemove.RemoveFriend(userToRemoveFriend);
+                Console.WriteLine("Friend '{0}' has been removed from '{1}'s friend list.", inputFriendName, inputUserName);
+            }
+            else
+            {
+                Console.WriteLine("Friend '{0}' does not exist in '{1}'s friend list.", inputFriendName, inputUserName);
+            }
+        }
+        else
+        {
+            Console.WriteLine("User '{0}' does not exist.", inputUserName);
+        }
+
+              
 
 
 
