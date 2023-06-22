@@ -15,6 +15,10 @@ namespace spotify1
         public List<User> FriendList = new List<User>();
 
         //List<int> friendlist = new List<int>();
+        public void AddFriend(User friend)
+        {
+            FriendList.Add(friend);
+        }
 
 
         public User (int ID, string naam)
