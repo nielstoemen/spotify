@@ -10,8 +10,11 @@ public class CreatePlaylist
 
     public CreatePlaylist( string naampje)
     {
+        //getting user input
         Playlist = new List<int>();
         PlaylistName = naampje;
+
+        //letting user add songs to playlist
         Console.WriteLine("name a song you want in here (case sensetive):");
         string songinput = Console.ReadLine();
         if (songinput == "alles is kut")
@@ -43,6 +46,7 @@ public class CreatePlaylist
             Console.WriteLine("did not reconige song, please try again");
         }
 
+        //letting the user add more songs if to their liking
         Console.WriteLine("Would you like to add another song? yes or no:");
         string antwoord = Console.ReadLine();
         if (antwoord == "yes")
