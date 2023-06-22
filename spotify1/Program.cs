@@ -332,7 +332,7 @@ namespace spotify1
 
 
 
-                    Console.WriteLine("Enter the name of the user from which you want to remove a friend:");
+        Console.WriteLine("Enter the name of the user from which you want to remove a friend:");
         string inputUserName = Console.ReadLine();
 
         User userToRemoveFriend = users.Find(u => u.Name == inputUserName.Trim());
