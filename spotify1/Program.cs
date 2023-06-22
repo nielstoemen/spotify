@@ -280,19 +280,19 @@ namespace spotify1
 
 
 
-     
-
-            // hier maken while nummerplaying is true gaat de bar van hoe lang het nummer duurt omhoog
+ 
 
             
-
+            //hier word de list aangeroepen waar de users in staan
             List<User> users = new List<User>();
 
+            //deze whileloop zorgt ervoor dat je vrienden kan toevoegen door zijn naam in te typen
             while (true)
             {
                 Console.WriteLine("Enter a name (or 'done' to finish):");
                 string inputFriendName = Console.ReadLine();
 
+                //als de gebruiker done in typed dan sluit hij de window om gebruikers toetevoegen
                 if (inputFriendName.ToLower() == "done")
                 {
                     break;
@@ -300,13 +300,14 @@ namespace spotify1
 
 
                 
-
+                //hier voegt hij de gebruiker toe aan je vriendenlijst
                 User newUser = new User(users.Count + 1, inputFriendName);
                 users.Add(newUser);
 
                 Console.WriteLine("Enter the names of friends for {0} (separated by commas):", inputFriendName);
                 string friendsInput = Console.ReadLine();
                
+                //deze if zorgt ervoor dat je wel iets intyped dus als je niks intyped dan zegt hij dat de inputfield leeg is
                 if (string.IsNullOrEmpty(friendsInput) || string.IsNullOrWhiteSpace(friendsInput))
                 {
                     Console.WriteLine("Sorry, your name is empty. Please enter again.");
@@ -314,6 +315,7 @@ namespace spotify1
                 }
                 string[] friendNames = friendsInput.Split(',');
 
+                //hier laat hij de vrienden zien die in de lijst staan
                 foreach (string friendName in friendNames)
                 {
                     User friend = users.Find(u => u.Name == friendName.Trim());
@@ -323,6 +325,7 @@ namespace spotify1
                         newUser.FriendList.Add(friend);
                         friend.FriendList.Add(newUser);
                     }
+                    // als de gebruiker nog niet bestaat dan slaat hij die naam over en moet je een nieuwe naam intypen
                     else
                     {
                         Console.WriteLine("User '{0}' does not exist. Skipping.", friendName.Trim());
@@ -331,17 +334,18 @@ namespace spotify1
             }
 
 
-
+            //hier word de functie aangemaakt dat je een vriend laat verwijderen uit je lijst
                     Console.WriteLine("Enter the name of the user from which you want to remove a friend:");
         string inputUserName = Console.ReadLine();
 
         User userToRemoveFriend = users.Find(u => u.Name == inputUserName.Trim());
 
+            
         if (userToRemoveFriend != null)
         {
             Console.WriteLine("Enter the name of the friend you want to remove:");
             string inputFriendName = Console.ReadLine();
-
+                //hier gaat hij de naam zoeken die je hebt ingetyped zodat hij verwijderd word uit je lijst
             User friendToRemove = userToRemoveFriend.FriendList.Find(f => f.Name == inputFriendName.Trim());
 
             if (friendToRemove != null)
@@ -350,11 +354,13 @@ namespace spotify1
                 friendToRemove.RemoveFriend(userToRemoveFriend);
                 Console.WriteLine("Friend '{0}' has been removed from '{1}'s friend list.", inputFriendName, inputUserName);
             }
+
             else
             {
                 Console.WriteLine("Friend '{0}' does not exist in '{1}'s friend list.", inputFriendName, inputUserName);
             }
         }
+        //als de naam niet bestaat moet je de naam nog een keer intypen
         else
         {
             Console.WriteLine("User '{0}' does not exist.", inputUserName);
