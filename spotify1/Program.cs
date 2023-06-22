@@ -99,19 +99,107 @@ namespace spotify1
                     if (PickSong == "alles is kut")
                     {
                         Console.WriteLine("*Playing alles is kut*");
+                        Console.WriteLine("Commands: *skip*, *pause*");
+                        string nummerCommand = Console.ReadLine();
+                        if (nummerCommand == "skip")
+                        {
+                            Console.WriteLine("*playing next song*");
+                            break;
+                        }else if(nummerCommand == "pause")
+                        {
+                            Console.WriteLine("*song paused* type play to continue");
+                            string nogeennummercommand = Console.ReadLine();
+                            if (nogeennummercommand == "play")
+                            {
+                                Console.WriteLine("continuing song");
+                                break;
+                            }
+                        }else
+                        {
+                            Console.WriteLine("command not reconigned continuing");
+                            break;
+                        }
+                        
                         break;
+
                     }else if(PickSong == "allesisvegina")
                     {
                         Console.WriteLine("*Playing allesisvegina*");
+                        Console.WriteLine("Commands: *skip*, *pause*");
+                        string nummerCommand = Console.ReadLine();
+                        if (nummerCommand == "skip")
+                        {
+                            Console.WriteLine("*playing next song*");
+                            break;
+                        }
+                        else if (nummerCommand == "pause")
+                        {
+                            Console.WriteLine("*song paused* type play to continue");
+                            string nogeennummercommand = Console.ReadLine();
+                            if (nogeennummercommand == "play")
+                            {
+                                Console.WriteLine("continuing song");
+                                break;
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine("command not reconigned continuing");
+                            break;
+                        }
                         break;
                     }else if(PickSong == "omaenmij")
                     {
                         Console.WriteLine("*Playing omaenmij*");
+                        Console.WriteLine("Commands: *skip*, *pause*");
+                        string nummerCommand = Console.ReadLine();
+                        if (nummerCommand == "skip")
+                        {
+                            Console.WriteLine("*playing next song*");
+                            break;
+                        }
+                        else if (nummerCommand == "pause")
+                        {
+                            Console.WriteLine("*song paused* type play to continue");
+                            string nogeennummercommand = Console.ReadLine();
+                            if (nogeennummercommand == "play")
+                            {
+                                Console.WriteLine("continuing song");
+                                break;
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine("command not reconigned continuing");
+                            break;
+                        }
                         break;
                     }
                     else if (PickSong == "bingchilling")
                     {
                         Console.WriteLine("*Playing bingchilling*");
+                        Console.WriteLine("Commands: *skip*, *pause*");
+                        string nummerCommand = Console.ReadLine();
+                        if (nummerCommand == "skip")
+                        {
+                            Console.WriteLine("*playing next song*");
+                            break;
+                        }
+                        else if (nummerCommand == "pause")
+                        {
+                            Console.WriteLine("*song paused* type play to continue");
+                            string nogeennummercommand = Console.ReadLine();
+                            if (nogeennummercommand == "play")
+                            {
+                                Console.WriteLine("continuing song");
+                                break;
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine("command not reconigned continuing");
+                            break;
+                        }
                         break;
                     }
                     else
