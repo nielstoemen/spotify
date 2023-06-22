@@ -1,0 +1,2 @@
+usecase diagram: https://lucid.app/lucidspark/df8374ae-e86a-42b4-b0d8-36934da46616/edit?viewport_loc=-73%2C1216%2C4748%2C2331%2C0_0&invitationId=inv_9407a7b2-2a4d-4504-be6f-1c1ab01e2fd5
+class diagram: https://lucid.app/lucidchart/a4c34679-2800-4c19-b34d-64df8fade951/edit?viewport_loc=-125%2C60%2C2931%2C1344%2C0_0&invitationId=inv_8f71bf0d-f5d9-47ad-bf46-61c0dc4adbb9
