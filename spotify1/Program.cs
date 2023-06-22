@@ -7,6 +7,8 @@ namespace spotify1
     {
         static void Main(string[] args)
         {
+
+            
             //<<<<<<<<<<creating database for user interaction>>>>>>>>>>>>>//
             //creating songs
             nummer allesiskut = new("alles is kut", "jemoeder", "drama", 1, 2.44);
@@ -96,29 +98,8 @@ namespace spotify1
                     Console.WriteLine("-" + allesisvegina.SongName);
                     Console.WriteLine("-" + omaenmij.SongName);
                     Console.WriteLine("-" + binchilling.SongName);
-                    string PickSong = Console.ReadLine();
-                    if (PickSong == "alles is kut")
-                    {
-                        Console.WriteLine("*Playing alles is kut*");
-                        break;
-                    }else if(PickSong == "allesisvegina")
-                    {
-                        Console.WriteLine("*Playing allesisvegina*");
-                        break;
-                    }else if(PickSong == "omaenmij")
-                    {
-                        Console.WriteLine("*Playing omaenmij*");
-                        break;
-                    }
-                    else if (PickSong == "bingchilling")
-                    {
-                        Console.WriteLine("*Playing bingchilling*");
-                        break;
-                    }
-                    else
-                    {
-                        Console.WriteLine("did not reconige song, please try again");
-                    }
+                    
+                   
                 }
 
 
@@ -150,6 +131,13 @@ namespace spotify1
 
 
 
+
+     
+
+            // hier maken while nummerplaying is true gaat de bar van hoe lang het nummer duurt omhoog
+
+            
+
             List<User> users = new List<User>();
 
             while (true)
@@ -163,7 +151,7 @@ namespace spotify1
                 }
 
 
-                    
+                
 
                 User newUser = new User(users.Count + 1, inputFriendName);
                 users.Add(newUser);
@@ -196,9 +184,40 @@ namespace spotify1
 
 
 
+                    Console.WriteLine("Enter the name of the user from which you want to remove a friend:");
+        string inputUserName = Console.ReadLine();
+
+        User userToRemoveFriend = users.Find(u => u.Name == inputUserName.Trim());
+
+        if (userToRemoveFriend != null)
+        {
+            Console.WriteLine("Enter the name of the friend you want to remove:");
+            string inputFriendName = Console.ReadLine();
+
+            User friendToRemove = userToRemoveFriend.FriendList.Find(f => f.Name == inputFriendName.Trim());
+
+            if (friendToRemove != null)
+            {
+                userToRemoveFriend.RemoveFriend(friendToRemove);
+                friendToRemove.RemoveFriend(userToRemoveFriend);
+                Console.WriteLine("Friend '{0}' has been removed from '{1}'s friend list.", inputFriendName, inputUserName);
+            }
+            else
+            {
+                Console.WriteLine("Friend '{0}' does not exist in '{1}'s friend list.", inputFriendName, inputUserName);
+            }
+        }
+        else
+        {
+            Console.WriteLine("User '{0}' does not exist.", inputUserName);
+        }
+
+              
 
 
-           
+
+
+
 
 
 
