@@ -12,7 +12,7 @@ namespace spotify1
         public string Name { get; set; }
 
 
-        public List<int> FriendList = new List<int>();
+        public List<User> FriendList = new List<User>();
 
         //List<int> friendlist = new List<int>();
 
@@ -22,8 +22,8 @@ namespace spotify1
             UserID = ID;
             Name = naam;
         }
-
-        public void RemoveFriend(User friend)
+        
+      public void RemoveFriend(User friend)
         {
             FriendList.Remove(friend);
         }
